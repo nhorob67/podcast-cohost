@@ -1,0 +1,8 @@
+[build]
+builder = "NIXPACKS"
+buildCommand = "cd edge-bridge && npm ci"
+
+[deploy]
+startCommand = "cd edge-bridge && npm start"
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 10

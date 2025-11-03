@@ -1,0 +1,8 @@
+[phases.setup]
+nixPkgs = ["nodejs-18_x"]
+
+[phases.install]
+cmds = ["cd edge-bridge && npm ci"]
+
+[start]
+cmd = "cd edge-bridge && npm start"
