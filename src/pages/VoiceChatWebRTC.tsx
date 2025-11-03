@@ -52,11 +52,7 @@ export default function VoiceChatWebRTC() {
   };
 
   const connectWebSocket = () => {
-    const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
-    const host = process.env.NODE_ENV === 'production'
-      ? window.location.host
-      : 'localhost:3001';
-    const wsUrl = `${protocol}//${host}/webrtc`;
+    const wsUrl = import.meta.env.VITE_EDGE_BRIDGE_URL || 'ws://localhost:3001/webrtc';
 
     const ws = new WebSocket(wsUrl);
     wsRef.current = ws;
